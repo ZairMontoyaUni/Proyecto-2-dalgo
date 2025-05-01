@@ -1,4 +1,5 @@
 from collections import deque
+import time
 
 def resolver_caso(n, energia, robots, poderes):
     destino = n
@@ -47,6 +48,7 @@ def resolver_caso(n, energia, robots, poderes):
     print("NO SE PUEDE")
 
 def main():
+    start_time = time.perf_counter()
     casos = int(input())
     
     for _ in range(casos):
@@ -54,6 +56,9 @@ def main():
         robots = list(map(int, input().split()))
         poderes = list(map(int, input().split()))
         resolver_caso(n, energia, robots, poderes)
+    end_time = time.perf_counter()
+    execution_time = end_time - start_time
+    print(f"The function took {execution_time:.4f} seconds to execute.")
 
 if __name__ == "__main__":
     main()
